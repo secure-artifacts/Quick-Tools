@@ -2,3 +2,7 @@ PyQt6
 moviepy
 pandas
 playwright
+numpy
+elevenlabs
+google-genai
+pyautogui

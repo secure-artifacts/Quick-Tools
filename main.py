@@ -16,8 +16,9 @@ from modules.config_manager import ConfigManager
 class DesktopApp(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Quick Tools - 全能工具箱")
-        self.setGeometry(100, 100, 1000, 750)
+        self.setWindowTitle("Quick Tools - 自媒体工具箱")
+        self.resize(900, 700) # Ensure window is resizable and defaults to a reasonable size
+        # self.setGeometry(100, 100, 1000, 750) # Removed fixed geometry to avoid high-DPI scaling issues
         self.config = ConfigManager()
         
         # 主容器
@@ -35,15 +36,16 @@ class DesktopApp(QMainWindow):
         self.init_tabs()
         
         # 全局样式
-        self.setStyleSheet("""
-            QMainWindow { background-color: #f0f0f0; }
-            QGroupBox { font-weight: bold; border: 1px solid #ccc; margin-top: 6px; padding-top: 10px; }
-            QGroupBox::title { subcontrol-origin: margin; left: 10px; padding: 0 3px; }
-            QTabWidget::pane { border: 1px solid #ccc; background: white; }
-            QTabBar::tab { background: #e0e0e0; padding: 8px 20px; margin: 2px; border-radius: 4px; }
-            QTabBar::tab:selected { background: #ffffff; border-bottom: 3px solid #0078d7; font-weight: bold; }
-            QPushButton { padding: 5px 10px; }
-        """)
+        # 加载外部样式表
+        self.load_stylesheet()
+
+    def load_stylesheet(self):
+        try:
+            style_path = os.path.join(current_dir, "resources", "style.qss")
+            with open(style_path, "r", encoding="utf-8") as f:
+                self.setStyleSheet(f.read())
+        except Exception as e:
+            print(f"Failed to load stylesheet: {e}")
 
     def init_global_settings(self, parent_layout):
         group = QGroupBox("全局设置")
@@ -78,8 +80,8 @@ class DesktopApp(QMainWindow):
 
     def init_tabs(self):
         # 音频工具页
-        from modules.audio_ui import AudioUI
-        self.tab_audio = AudioUI()
+        from modules.audio_manager import AudioManagerUI
+        self.tab_audio = AudioManagerUI()
         self.tabs.addTab(self.tab_audio, "🎵 音频工具")
 
         # 视频工具页占位符
@@ -93,14 +95,14 @@ class DesktopApp(QMainWindow):
         self._setup_placeholder(self.tab_text, "文本处理与操作\n(开发中)")
 
         # 文件管理页
-        from modules.file_manager_ui import FileManagerUI
+        from modules.file_manager import FileManagerUI
         self.tab_file = FileManagerUI()
         self.tabs.addTab(self.tab_file, "📂 文件管理")
         
-        # 浏览器机器人页占位符
-        self.tab_browser = QWidget()
-        self.tabs.addTab(self.tab_browser, "🌐 浏览器机器人")
-        self._setup_placeholder(self.tab_browser, "自动化浏览器操作\n(开发中)")
+        # HeyGen 自动 (新模块)
+        from modules.heygen_manager import HeyGenManagerUI
+        self.tab_heygen = HeyGenManagerUI()
+        self.tabs.addTab(self.tab_heygen, "🤖 HeyGen 自动")
 
     def _setup_placeholder(self, tab, message):
         layout = QVBoxLayout()

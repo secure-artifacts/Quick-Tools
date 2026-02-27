@@ -1,3 +1,13 @@
 {
-    "global_output_dir": "C:/Users/DELL/Desktop/python工程/测试文件"
+    "global_output_dir": "",
+    "elevenlabs_api_key": "",
+    "elevenlabs_voice_id": "JBFqnCBsd6RMkjVDRZzb",
+    "elevenlabs_model_id": "eleven_v3",
+    "elevenlabs_keys": [],
+    "google_ai_api_key": "",
+    "google_ai_voice_id": "Zephyr",
+    "google_ai_model_id": "gemini-2.5-flash-preview-tts",
+    "google_ai_keys": [],
+    "voice_library": [],
+    "audio_tasks": []
 }

@@ -5,6 +5,7 @@ __pycache__/
 
 # Environments
 .env
+.env.*
 .venv
 env/
 venv/
@@ -22,3 +23,25 @@ venv.bak/
 dist/
 build/
 *.spec
+
+# Database & logs
+*.db
+history.db
+logs/
+
+# Config with secrets
+config.json
+
+# Debug / test scripts
+check_*.py
+debug_*.py
+diagnose_*.py
+test_*.py
+package.py
+create_repo.py
+
+# Temp and data files
+modules/heygen_manager/profiles/
+
+# macOS
+.DS_Store

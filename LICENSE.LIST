@@ -1,0 +1,29 @@
+# 依赖协议清单 (LICENSE.LIST)
+
+> 本文件由 AI 助手自动生成，记录项目所有直接依赖的协议信息。
+> 生成时间：2026-02-27
+> 审计工具：AI 依赖协议审计 (https://tpscsm-docs.pages.dev/license-audit/)
+
+## 统计摘要
+
+| 协议类型 | 数量 | 风险等级 |
+|---------|------|---------|
+| MIT | 2 | ✅ 低风险 |
+| BSD-3-Clause | 3 | ✅ 低风险 |
+| Apache-2.0 | 2 | ✅ 低风险 |
+| GPL-3.0-only | 1 | ⚠️ 需关注 |
+
+**总计：** 8 个直接依赖
+
+## 依赖详情
+
+| 序号 | 依赖名称 | 版本 | 协议 (SPDX) | 来源 | 风险 | 备注 |
+|------|---------|------|-------------|------|------|------|
+| 1 | PyQt6 | (未指定) | GPL-3.0-only | https://www.riverbankcomputing.com/software/pyqt/ | ⚠️ | 分发时须开源，或购买商业授权 |
+| 2 | moviepy | (未指定) | MIT | https://pypi.org/project/moviepy/ | ✅ | |
+| 3 | pandas | (未指定) | BSD-3-Clause | https://pypi.org/project/pandas/ | ✅ | |
+| 4 | playwright | (未指定) | Apache-2.0 | https://pypi.org/project/playwright/ | ✅ | |
+| 5 | numpy | (未指定) | BSD-3-Clause | https://pypi.org/project/numpy/ | ✅ | |
+| 6 | elevenlabs | (未指定) | MIT | https://pypi.org/project/elevenlabs/ | ✅ | |
+| 7 | google-genai | (未指定) | Apache-2.0 | https://pypi.org/project/google-genai/ | ✅ | |
+| 8 | pyautogui | (未指定) | BSD-3-Clause | https://pypi.org/project/pyautogui/ | ✅ | 注意：其依赖 mouseinfo 为 GPL-3.0 |

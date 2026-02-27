@@ -1,0 +1,87 @@
+# 项目协议合规报告
+
+> 本文件由 AI 助手自动生成，旨在帮助了解项目的协议合规情况。
+> 本文件为合规参考，不构成法律建议。如有疑问请咨询法律专业人士。
+> 生成时间：2026-02-27
+> 审计工具：AI 依赖协议审计 (https://tpscsm-docs.pages.dev/license-audit/)
+
+## 项目协议
+
+本项目尚未声明自身协议。建议项目所有者选择一个合适的开源协议（如 MIT、Apache-2.0 等）或声明为专有软件。
+
+## 依赖协议摘要
+
+- 宽松协议 (MIT/BSD/ISC): 5 个 — ✅ 无特殊限制
+- Apache-2.0: 2 个 — ✅ 需保留 NOTICE 和版权声明
+- 强 Copyleft (GPL): 1 个 — ⚠️ 分发时须开源衍生作品
+- 未知协议: 0 个
+
+## 继承限制
+
+基于依赖协议分析，本项目在使用和分发时须遵守以下限制：
+
+### ⚠️ Copyleft 限制
+
+- 本项目包含 GPL-3.0 协议的依赖（**PyQt6**），根据 GPL-3.0 条款：
+  - 分发本项目时必须同时提供完整源代码
+  - 衍生作品必须使用相同的 GPL-3.0 协议
+  - 不能对源代码施加额外限制
+  - **替代方案**：可购买 PyQt6 商业授权以避免 GPL 传染
+- **pyautogui** 本身为 BSD-3-Clause，但其依赖 **mouseinfo** 为 GPL-3.0，可能存在子许可冲突
+
+### ✅ 商用限制
+
+- 当前依赖均不限制商业用途（PyQt6 可通过购买商业授权用于商业项目）✅
+
+### ✅ Attribution 要求
+
+以下依赖要求在分发时保留版权声明：
+
+- **moviepy** (MIT) — Copyright (c) Zulko
+- **elevenlabs** (MIT) — Copyright (c) ElevenLabs
+- **pandas** (BSD-3-Clause) — Copyright (c) AQR Capital Management, LLC, Lambda Foundry, Inc. and PyData Development Team
+- **numpy** (BSD-3-Clause) — Copyright (c) NumPy Developers
+- **pyautogui** (BSD-3-Clause) — Copyright (c) Al Sweigart
+- **playwright** (Apache-2.0) — Copyright (c) Microsoft Corporation
+- **google-genai** (Apache-2.0) — Copyright (c) Google LLC
+
+## 第三方协议声明
+
+### GPL-3.0-only
+
+以下组件使用 GPL-3.0-only 协议：
+- PyQt6 — Copyright (c) Riverbank Computing Limited
+
+GPL-3.0 协议要求：分发包含此库的软件时，必须同时提供源代码，并以 GPL-3.0 或兼容协议发布。
+
+### MIT License
+
+以下组件使用 MIT 协议：
+- moviepy — Copyright (c) Zulko
+- elevenlabs — Copyright (c) ElevenLabs
+
+MIT 协议全文摘要：允许任何人免费使用、复制、修改、合并、发布、分发、再许可和/或出售软件副本，前提是保留版权声明和许可声明。
+
+### BSD-3-Clause License
+
+以下组件使用 BSD-3-Clause 协议：
+- pandas — Copyright (c) AQR Capital Management, LLC, Lambda Foundry, Inc. and PyData Development Team
+- numpy — Copyright (c) NumPy Developers
+- pyautogui — Copyright (c) Al Sweigart
+
+BSD-3-Clause 协议要求：保留版权声明，不使用贡献者名称做推广。
+
+### Apache License 2.0
+
+以下组件使用 Apache-2.0 协议：
+- playwright — Copyright (c) Microsoft Corporation
+- google-genai — Copyright (c) Google LLC
+
+Apache-2.0 协议要求：保留版权声明和 NOTICE 文件，包含专利授权条款。
+
+## 风险提示与建议
+
+1. **PyQt6 GPL-3.0 是主要风险点**：如果您计划将此项目作为闭源软件分发，建议购买 PyQt6 商业授权，或考虑迁移至 PySide6（LGPL-3.0，弱 Copyleft）
+2. **pyautogui 的 mouseinfo 依赖**为 GPL-3.0，可能导致传染性问题，建议关注
+3. 建议定期重新审计依赖协议（可使用本审计工具的 Skill 功能自动检查）
+4. 如有法律疑问，请咨询专业法律顾问
