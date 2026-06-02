@@ -227,16 +227,19 @@ class VideoIntegratedWidget(QWidget):
             self.path_label.setText("当前目录: 未设置")
             self.clear_list()
 
+    def clear_list(self):
+        for row in self.rows:
+            self.list_layout.removeWidget(row)
+            row.deleteLater()
+        self.rows = []
+
     def scan_projects(self):
         root = self.path_label.text().split(": ", 1)[1]
         if not os.path.exists(root):
             return
         
         # 清空当前显示
-        for row in self.rows:
-            self.list_layout.removeWidget(row)
-            row.deleteLater()
-        self.rows = []
+        self.clear_list()
         
         audio_dir = os.path.join(root, self.SUB_FOLDER_AUDIO)
         video_dir = os.path.join(root, self.SUB_FOLDER_VIDEO)
